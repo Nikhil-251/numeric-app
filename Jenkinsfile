@@ -73,8 +73,8 @@ pipeline {
         stage('Docker Build and Push') {
             steps {
                 withDockerRegistry(credentialsId: 'quay-cred', url: 'https://quay.io') {
-                   sh 'docker build -t quay.io/anshuk6469/numeric-app:""$GIT_COMMIT"" .'
-                   sh 'docker push quay.io/anshuk6469/numeric-app:""$GIT_COMMIT""'     
+                   sh 'docker build -t quay.io/koenig32-del-in/numeric-app:""$GIT_COMMIT"" .'
+                   sh 'docker push quay.io/koenig32-del-in/numeric-app:""$GIT_COMMIT""'     
                }
             }
         }
