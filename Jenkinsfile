@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/anshuk6469/numeric-app.git'
+                git branch: 'main', url: 'https://github.com/Nikhil-251/numeric-app.git'
                 sh "mvn -DskipTests=true clean package"
             }
         }
@@ -81,7 +81,7 @@ pipeline {
         stage('K8s-Deploy') {
             steps {
                withKubeConfig(credentialsId: 'kubeconfig') {
-                 sh "sed -i 's#replace#quay.io/anshuk6469/numeric-app:${GIT_COMMIT}#g' k8s_deploy_ser.yaml"
+                 sh "sed -i 's#replace#quay.io//koenig32-del-in:${GIT_COMMIT}#g' k8s_deploy_ser.yaml"
                  sh "kubectl apply -f k8s_deploy_ser.yaml"
                }
             }
