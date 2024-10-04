@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         serviceName = "devsecops-svc"
-        applicationURL="http://172.25.232.63"
+        applicationURL="http://172.25.231.220"
         applicationURI="increment/99"
     }
 
